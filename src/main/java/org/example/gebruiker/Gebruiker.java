@@ -1,5 +1,7 @@
 package org.example.gebruiker;
 
+import org.example.berekening.Berekening;
+
 public interface Gebruiker {
 
     void bekijkGeschiedenis();
@@ -12,5 +14,5 @@ public interface Gebruiker {
 
     boolean isKlant();
 
-    void addBerekening();
+    void addBerekening(Berekening berekening);
 }

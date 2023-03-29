@@ -1,5 +1,6 @@
 package org.example.gebruiker;
 
+import org.example.berekening.Berekening;
 import org.example.berekening.Geschiedenis;
 import org.example.rekenmachine.Rekenmachine;
 
@@ -22,8 +23,8 @@ public class Klant implements Gebruiker {
     }
 
     @Override
-    public void addBerekening() {
-
+    public void addBerekening(Berekening berekening) {
+        geschiedenis.addBerekening(berekening);
     }
 
     private void invoerLoop(){
@@ -39,7 +40,7 @@ public class Klant implements Gebruiker {
 
     @Override
     public void bekijkGeschiedenis(){
-
+        geschiedenis.invoerLoop();
     }
 
     @Override
@@ -49,7 +50,7 @@ public class Klant implements Gebruiker {
 
     @Override
     public void updateGebruikersNaam(){
-
+        invoerLoop();
     }
 
     @Override

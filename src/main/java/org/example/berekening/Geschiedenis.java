@@ -15,7 +15,7 @@ public class Geschiedenis {
 
     }
 
-    public void addBerekening(){
+    public void addBerekening(Berekening berekening){
 
     }
 

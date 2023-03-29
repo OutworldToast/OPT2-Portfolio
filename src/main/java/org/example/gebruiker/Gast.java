@@ -1,5 +1,7 @@
 package org.example.gebruiker;
 
+import org.example.berekening.Berekening;
+
 public class Gast implements Gebruiker{
 
     @Override
@@ -32,7 +34,7 @@ public class Gast implements Gebruiker{
     }
 
     @Override
-    public void addBerekening() {
-        printMessage();
+    public void addBerekening(Berekening berekening) {
+
     }
 }

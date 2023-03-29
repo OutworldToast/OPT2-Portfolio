@@ -59,12 +59,12 @@ public class Rekenmachine {
     private void bereken(){
         Berekening berekening = new Berekening();
         if (gebruiker.isKlant()) {
-            addBerekening();
+            addBerekening(berekening);
         }
     }
 
-    private void addBerekening(){
-        gebruiker.addBerekening();
+    private void addBerekening(Berekening berekening){
+        gebruiker.addBerekening(berekening);
     }
 
     private void bekijkGeschiedenis(){
