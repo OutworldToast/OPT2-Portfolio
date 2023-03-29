@@ -3,6 +3,7 @@ package org.example.gebruiker;
 import org.example.berekening.Geschiedenis;
 import org.example.rekenmachine.Rekenmachine;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Klant implements Gebruiker {
@@ -12,7 +13,7 @@ public class Klant implements Gebruiker {
     private String gebruikersNaam;
 
     public Klant(){
-
+        invoerLoop();
     }
 
     @Override
@@ -20,8 +21,20 @@ public class Klant implements Gebruiker {
         return true;
     }
 
-    private void invoerLoop(){
+    @Override
+    public void addBerekening() {
 
+    }
+
+    private void invoerLoop(){
+        boolean b = true;
+        while (b) {
+            System.out.println("Wat is uw naam?");
+            String input = scanner.nextLine();
+            if (input == null) {
+                System.out.println("Voer een naam in");
+            } else {b = false;}
+        }
     }
 
     @Override

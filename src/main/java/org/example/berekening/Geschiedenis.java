@@ -15,6 +15,10 @@ public class Geschiedenis {
 
     }
 
+    public void addBerekening(){
+
+    }
+
     private void toonBerekeningen(){
 
     }

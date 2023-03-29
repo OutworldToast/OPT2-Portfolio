@@ -12,4 +12,5 @@ public interface Gebruiker {
 
     boolean isKlant();
 
+    void addBerekening();
 }
