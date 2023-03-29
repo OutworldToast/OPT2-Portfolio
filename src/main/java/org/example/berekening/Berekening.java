@@ -18,7 +18,7 @@ public class Berekening { //geen manier om berekeningloop te verlaten zonder een
         invoerLoop();
     }
 
-    public void toonBerekening(){
+    public void toonBerekening(){ //houdt geen rekening met volgorde van operaties
         for (int i = 0; i < getallen.size() - 1; i++) {
             System.out.printf("%d ", getallen.get(i));
             System.out.printf("%s ", operaties.get(i));
@@ -61,21 +61,25 @@ public class Berekening { //geen manier om berekeningloop te verlaten zonder een
     private void invoerLoop(){ //methode is te groot: moet afgesplitst worden
         System.out.println("Tijd om te gaan rekenen");
         boolean b = true;
+
+        while (b) { //splits naar aparte methode
+            try {
+                System.out.println("Typ een getal");
+                resultaat = scanner.nextInt();
+                getallen.add(resultaat);
+                b = false;
+            } catch (InputMismatchException e) {
+                System.out.println("Dat is geen getal");
+                scanner.next();
+            }
+        }
+
+        b = true;
+
         while (b) {
 
             boolean c = true;
 
-            while (c) { //splits naar aparte methode
-                try {
-                    System.out.println("Typ een getal");
-                    resultaat = scanner.nextInt();
-                    getallen.add(resultaat);
-                    c = false;
-                } catch (InputMismatchException ignored) {
-                }
-            }
-
-            c = true;
             int getal = 0;
 
             while (c) { //splits naar aparte methode
@@ -84,7 +88,8 @@ public class Berekening { //geen manier om berekeningloop te verlaten zonder een
                     getal = scanner.nextInt();
                     c = false;
                 } catch (InputMismatchException e) {
-                    System.out.println("Typ een getal");
+                    System.out.println("Dat is geen getal");
+                    scanner.next();
                 }
             }
 
@@ -107,7 +112,8 @@ public class Berekening { //geen manier om berekeningloop te verlaten zonder een
                         default -> System.out.println("Dat is geen optie");
                     }
                 } catch (InputMismatchException e) {
-                    System.out.println("Typ een getal");
+                    System.out.println("Dat is geen getal");
+                    scanner.next();
                 }
             }
 
@@ -126,7 +132,8 @@ public class Berekening { //geen manier om berekeningloop te verlaten zonder een
                         default -> System.out.println("Dat is geen optie");
                     }
                 } catch (InputMismatchException e) {
-                    System.out.println("Typ een getal");
+                    System.out.println("Dat is geen getal");
+                    scanner.next();
                 }
             }
         }

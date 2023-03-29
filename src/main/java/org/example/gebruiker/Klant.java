@@ -26,12 +26,12 @@ public class Klant implements Gebruiker {
         geschiedenis.addBerekening(berekening);
     }
 
-    private void invoerLoop(){
+    private void invoerLoop(){//voeg extra controles toe (bijv check of het al huidige naam is)
         boolean b = true;
         while (b) {
             System.out.println("Wat is uw naam?");
             String input = scanner.nextLine();
-            if (input == null) {
+            if (input.equals("")) {
                 System.out.println("Voer een naam in");}
             else {
                 this.gebruikersNaam = input;

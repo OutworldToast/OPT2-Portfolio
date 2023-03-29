@@ -41,7 +41,9 @@ public class Rekenmachine {
 
                 int input = scanner.nextInt();
                 switch (input) {
-                    case 0 -> loop = false;
+                    case 0 -> {
+                        System.out.printf("Dag %s!", gebruiker.getGebruikersNaam());
+                        loop = false;} //voeg methode Exit() toe
                     case 1 -> bereken();
                     case 2 -> bekijkGeschiedenis();
                     case 3 -> {
@@ -51,7 +53,8 @@ public class Rekenmachine {
                 }
 
             } catch (InputMismatchException e) {
-                System.out.println("Typ een getal");
+                System.out.println("Dat is geen getal");
+                scanner.next();
             }
         }
     }
@@ -72,30 +75,35 @@ public class Rekenmachine {
     }
 
     private void maakAccount(){
+        scanner.nextLine();
         this.gebruiker = new Klant();
     }
 
     private void updateGebruiker(){
+        scanner.nextLine();
         gebruiker.updateGebruikersNaam();
     }
 
     private void toonIntroductie(){
+        System.out.println("Welkom!");
+        System.out.println("Dit is een simpele rekenmachine");
         boolean b = true;
         while (b) {
             try {
-                System.out.println("Welkom!");
-                System.out.println("Dit is een simpele rekenmachine");
                 System.out.println("Typ het getal in blokhaken om de optie te kiezen");
                 System.out.println("[0] Exit");
                 System.out.println("[1] Verder");
                 int input = scanner.nextInt();
                 switch (input) {
-                    case 0 -> {loop = false; b = false;}
+                    case 0 -> {
+                        System.out.printf("Dag %s!", gebruiker.getGebruikersNaam());
+                        loop = false; b = false;} //voeg methode Exit() toe
                     case 1 -> b = false;
                     default -> System.out.println("Dat is geen optie");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Typ een getal");
+                System.out.println("Dat is geen getal");
+                scanner.next();
             }
         }
     }

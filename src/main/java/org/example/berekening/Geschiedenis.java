@@ -28,7 +28,8 @@ public class Geschiedenis {
                     default -> System.out.println("Dat is geen optie");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Typ een getal");
+                System.out.println("Dat is geen getal");
+                scanner.next();
             }
         }
     }
@@ -41,13 +42,12 @@ public class Geschiedenis {
         int i = 0;
         for (Berekening berekening : geschiedenis) {
             i++;
-            System.out.printf("[%d]", i);
+            System.out.printf("[%d] ", i);
             berekening.toonBerekening();
         }
     }
 
     private void verwijderBerekening(){
-        toonBerekeningen();
 
         boolean b = true;
         while (b) {
@@ -55,15 +55,17 @@ public class Geschiedenis {
                 System.out.println("Welkom bij uw geschiedenis");
                 System.out.println("Typ het getal in blokhaken om de optie te kiezen");
                 System.out.println("[0] Terug");
+                toonBerekeningen();
                 int input = scanner.nextInt();
                 if (input == 0) {
                     b = false;}
                 else if (input > 0 && input <= geschiedenis.size()){
-                    geschiedenis.remove(input);}
+                    geschiedenis.remove(input - 1);}
                 else {System.out.println("Dat is geen optie");}
                 }
             catch (InputMismatchException e) {
-                System.out.println("Typ een getal");
+                System.out.println("Dat is geen getal");
+                scanner.next();
             }
         }
     }
