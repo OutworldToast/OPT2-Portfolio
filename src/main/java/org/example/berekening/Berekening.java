@@ -122,7 +122,7 @@ public class Berekening { //geen manier om berekeningloop te verlaten zonder een
                     int input = scanner.nextInt();
                     switch (input) {
                         case 0 -> {b = false; c = false;}
-                        case 1 -> {c = false;}
+                        case 1 -> c = false;
                         default -> System.out.println("Dat is geen optie");
                     }
                 } catch (InputMismatchException e) {

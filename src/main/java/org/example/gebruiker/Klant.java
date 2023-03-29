@@ -4,13 +4,12 @@ import org.example.berekening.Berekening;
 import org.example.berekening.Geschiedenis;
 import org.example.rekenmachine.Rekenmachine;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Klant implements Gebruiker {
 
     private final Scanner scanner = Rekenmachine.scanner;
-    private Geschiedenis geschiedenis = new Geschiedenis();
+    private final Geschiedenis geschiedenis = new Geschiedenis();
     private String gebruikersNaam;
 
     public Klant(){
@@ -33,8 +32,10 @@ public class Klant implements Gebruiker {
             System.out.println("Wat is uw naam?");
             String input = scanner.nextLine();
             if (input == null) {
-                System.out.println("Voer een naam in");
-            } else {b = false;}
+                System.out.println("Voer een naam in");}
+            else {
+                this.gebruikersNaam = input;
+                b = false;}
         }
     }
 
