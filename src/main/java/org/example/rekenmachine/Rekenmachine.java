@@ -34,7 +34,7 @@ public class Rekenmachine {
                 System.out.println("Typ het getal in blokhaken om de optie te kiezen");
                 System.out.println("[0] Exit");
                 System.out.println("[1] Nieuwe berekening");
-                System.out.println("[2] Bekijk Geschiedenis");
+                System.out.println("[2] Ga naar Geschiedenis");
                 System.out.print("[3] ");
                 if (klant) {System.out.println("Verander gebruikersnaam");}
                 else {System.out.println("Maak account");}
