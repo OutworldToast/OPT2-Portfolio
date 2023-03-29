@@ -16,6 +16,10 @@ public class Klant implements Gebruiker {
         invoerLoop();
     }
 
+    public Klant(boolean test) {//voor testen
+
+    }
+
     @Override
     public boolean isKlant() {
         return true;

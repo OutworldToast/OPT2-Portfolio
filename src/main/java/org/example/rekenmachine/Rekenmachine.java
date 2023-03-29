@@ -96,7 +96,7 @@ public class Rekenmachine {
                 int input = scanner.nextInt();
                 switch (input) {
                     case 0 -> {
-                        System.out.printf("Dag %s!", gebruiker.getGebruikersNaam());
+                        System.out.print("Dag!");
                         loop = false; b = false;} //voeg methode Exit() toe
                     case 1 -> b = false;
                     default -> System.out.println("Dat is geen optie");

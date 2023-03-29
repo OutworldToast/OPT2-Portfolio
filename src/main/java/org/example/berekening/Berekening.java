@@ -18,6 +18,14 @@ public class Berekening { //geen manier om berekeningloop te verlaten zonder een
         invoerLoop();
     }
 
+    public Berekening(boolean test){//voor testen
+
+    }
+
+    public int getResultaat(){//voor testen
+        return resultaat;
+    }
+
     public void toonBerekening(){ //houdt geen rekening met volgorde van operaties
         for (int i = 0; i < getallen.size() - 1; i++) {
             System.out.printf("%d ", getallen.get(i));
@@ -26,7 +34,7 @@ public class Berekening { //geen manier om berekeningloop te verlaten zonder een
         System.out.printf("%d = %d%n", getallen.get(getallen.size() - 1), resultaat);
     }
 
-    private void add(int getal1, int getal2) {//optimaliseer deze methodes
+    public void add(int getal1, int getal2) {//optimaliseer deze methodes
         String operatie = "+";
         getallen.add(getal2);
         operaties.add(operatie);
@@ -34,7 +42,7 @@ public class Berekening { //geen manier om berekeningloop te verlaten zonder een
         toonBerekening();
     }
 
-    private void subtract(int getal1, int aftrek) {
+    public void subtract(int getal1, int aftrek) {
         String operatie = "-";
         getallen.add(aftrek);
         operaties.add(operatie);
@@ -42,7 +50,7 @@ public class Berekening { //geen manier om berekeningloop te verlaten zonder een
         toonBerekening();
     }
 
-    private void divide(int getal1, int deler) {
+    public void divide(int getal1, int deler) {
         String operatie = "/";
         getallen.add(deler);
         operaties.add(operatie);
@@ -50,7 +58,7 @@ public class Berekening { //geen manier om berekeningloop te verlaten zonder een
         toonBerekening();
     }
 
-    private void multiply(int getal1, int getal2) {
+    public void multiply(int getal1, int getal2) {
         String operatie = "*";
         getallen.add(getal2);
         operaties.add(operatie);
